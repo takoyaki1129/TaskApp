@@ -125,11 +125,11 @@ class InputActivity : AppCompatActivity() {
 
         val title = title_edit_text.text.toString()
         val content = content_edit_text.text.toString()
-        val category = category_edit_text.text.toString() //追記
+        val categoryText = category_edit_text.text.toString() //追記
 
         mTask!!.title = title
         mTask!!.contents = content
-        mTask!!.category = category //追記
+        mTask!!.category = categoryText //追記
         val calendar = GregorianCalendar(mYear, mMonth, mDay, mHour, mMinute)
         val date = calendar.time
         mTask!!.date = date

@@ -96,12 +96,12 @@ class MainActivity : AppCompatActivity() {
 
         //【追加】カテゴリー絞り込み ifでEditTextの中身に応じた処理？
         filter_button.setOnClickListener { v: View ->
-            val category = filter_editText.toString()
+            val categoryText = filter_editText.text.toString()
 
             // Realmデータベースから、「全てのデータを取得して新しい日時順に並べた結果」を取得
-            if (category != null) {
+            if (categoryText != null) {
                 val taskRealmResults = mRealm.where(Task::class.java)
-                        .equalTo("id", category)
+                        .equalTo("category", categoryText)
                         .findAll().sort("date", Sort.DESCENDING)
 
                 // 上記の結果を、TaskList としてセットする
